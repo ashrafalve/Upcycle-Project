@@ -68,13 +68,13 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const userInitials = user ? `${user.first_name?.[0] || ''}${user.last_name?.[0] || ''}` : 'U';
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Mobile Header */}
-      <header className="bg-white border-b sticky top-0 z-50 lg:hidden">
+      <header className="bg-white dark:bg-gray-800 border-b sticky top-0 z-50 lg:hidden">
         <div className="flex items-center justify-between px-4 h-14">
           <button 
             onClick={() => setSidebarOpen(true)}
-            className="p-2 -ml-2 text-gray-600"
+            className="p-2 -ml-2 text-gray-600 dark:text-gray-300"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -88,14 +88,14 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       </header>
 
       {/* Desktop Header */}
-      <header className="bg-white border-b sticky top-0 z-50 hidden lg:block">
+      <header className="bg-white dark:bg-gray-800 border-b sticky top-0 z-50 hidden lg:block">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-emerald-600">
             UpCycle
           </Link>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">{userName}</span>
-            <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-medium text-sm">
+            <span className="text-sm text-gray-600 dark:text-gray-300">{userName}</span>
+            <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-medium text-sm">
               {userInitials}
             </div>
           </div>
@@ -113,16 +113,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           )}
 
           {/* Sidebar */}
-          <aside className={`
-            fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white transform transition-transform duration-200 ease-in-out
+          <aside className={` fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white dark:bg-gray-800 transform transition-transform duration-200 ease-in-out
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             lg:w-64 flex-shrink-0
           `}>
             <div className="h-full flex flex-col">
               {/* Mobile Header */}
-              <div className="flex items-center justify-between p-4 border-b lg:hidden">
-                <span className="font-semibold">Menu</span>
-                <button onClick={() => setSidebarOpen(false)} className="p-2">
+              <div className="flex items-center justify-between p-4 border-b lg:hidden dark:border-gray-700">
+                <span className="font-semibold text-gray-900 dark:text-white">Menu</span>
+                <button onClick={() => setSidebarOpen(false)} className="p-2 text-gray-600 dark:text-gray-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -139,8 +138,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                         className={cn(
                           'flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                           pathname === link.href
-                            ? 'bg-emerald-50 text-emerald-600'
-                            : 'text-gray-600 hover:bg-gray-50'
+                            ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
+                            : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                         )}
                       >
                         {link.icon}

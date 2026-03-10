@@ -345,15 +345,15 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
       {/* Make Offer Dialog */}
       <Dialog open={showOfferDialog} onOpenChange={setShowOfferDialog}>
-        <DialogContent>
+        <DialogContent className="bg-white dark:bg-gray-800">
           <DialogHeader>
-            <DialogTitle>Make an Offer</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-gray-900 dark:text-white">Make an Offer</DialogTitle>
+            <DialogDescription className="text-gray-600 dark:text-gray-400">
               Enter your offer amount for {product.title}
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Your Offer ({formatPrice(product.price)} asking price)
             </label>
             <input
@@ -361,16 +361,16 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               value={offerAmount}
               onChange={(e) => setOfferAmount(e.target.value)}
               placeholder="Enter amount"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               min="1"
               step="0.01"
             />
-            <p className="text-xs text-gray-500 mt-2">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
               Suggested: {formatPrice(product.price * 0.8)} - {formatPrice(product.price)}
             </p>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowOfferDialog(false)}>
+            <Button variant="outline" onClick={() => setShowOfferDialog(false)} className="dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
               Cancel
             </Button>
             <Button 
@@ -386,16 +386,16 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
       {/* Delivery Information Dialog */}
       <Dialog open={showDeliveryDialog} onOpenChange={setShowDeliveryDialog}>
-        <DialogContent>
+        <DialogContent className="bg-white dark:bg-gray-800">
           <DialogHeader>
-            <DialogTitle>Delivery Information</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-gray-900 dark:text-white">Delivery Information</DialogTitle>
+            <DialogDescription className="text-gray-600 dark:text-gray-400">
               Please provide your delivery details to confirm your order for {product.title}
             </DialogDescription>
           </DialogHeader>
           <div className="py-4 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Full Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -404,12 +404,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 value={deliveryInfo.fullName}
                 onChange={handleDeliveryChange}
                 placeholder="Enter your full name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Address <span className="text-red-500">*</span>
               </label>
               <input
@@ -418,13 +418,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 value={deliveryInfo.address}
                 onChange={handleDeliveryChange}
                 placeholder="Enter your street address"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 required
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   City <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -433,12 +433,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   value={deliveryInfo.city}
                   onChange={handleDeliveryChange}
                   placeholder="City"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   State <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -447,14 +447,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   value={deliveryInfo.state}
                   onChange={handleDeliveryChange}
                   placeholder="State"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   ZIP Code <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -463,12 +463,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   value={deliveryInfo.zipCode}
                   onChange={handleDeliveryChange}
                   placeholder="ZIP Code"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -477,19 +477,19 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   value={deliveryInfo.phone}
                   onChange={handleDeliveryChange}
                   placeholder="Phone Number"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
             </div>
-            <div className="bg-gray-50 p-3 rounded-lg">
-              <p className="text-sm text-gray-600">
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
                 <span className="font-medium">Order Summary:</span> {product.title} - {formatPrice(product.price)}
               </p>
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowDeliveryDialog(false)}>
+            <Button variant="outline" onClick={() => setShowDeliveryDialog(false)} className="dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
               Cancel
             </Button>
             <Button 

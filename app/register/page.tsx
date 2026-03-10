@@ -4,7 +4,7 @@ import { RegisterForm } from '@/features/auth/components/register-form';
 export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
-      <div className="hidden lg:flex flex-1 bg-emerald-600 items-center justify-center p-12">
+      <div className="hidden lg:flex flex-1 bg-emerald-600 dark:bg-emerald-800 items-center justify-center p-12">
         <div className="max-w-md text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Start Your UpCycle Journey</h2>
           <p className="text-emerald-100">
@@ -14,21 +14,21 @@ export default function RegisterPage() {
         </div>
       </div>
       
-      <div className="flex-1 flex items-center justify-center p-8">
+      <div className="flex-1 flex items-center justify-center p-8 bg-white dark:bg-gray-900">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <Link href="/" className="text-3xl font-bold text-emerald-600">
               UpCycle
             </Link>
-            <h1 className="mt-6 text-2xl font-bold text-gray-900">Create an account</h1>
-            <p className="mt-2 text-gray-600">Join the UpCycle community</p>
+            <h1 className="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Create an account</h1>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">Join the UpCycle community</p>
           </div>
           
           <RegisterForm />
           
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-gray-600 dark:text-gray-400">
             Already have an account?{' '}
-            <Link href="/login" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/login" className="font-medium text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">
               Sign in
             </Link>
           </p>

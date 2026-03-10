@@ -61,9 +61,9 @@ export default function MarketplacePage() {
           <div className="lg:hidden mb-4">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-white rounded-lg shadow-sm border"
+              className="w-full flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-700"
             >
-              <span className="font-medium">Filters</span>
+              <span className="font-medium text-gray-900 dark:text-white">Filters</span>
               <svg className={`w-5 h-5 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -73,7 +73,7 @@ export default function MarketplacePage() {
           <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
             {/* Filters Sidebar */}
             <aside className={`lg:w-64 flex-shrink-0 ${showFilters ? 'block' : 'hidden lg:block'}`}>
-              <div className="bg-white rounded-lg shadow-sm p-4 lg:p-0 lg:shadow-none">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 lg:p-0 lg:shadow-none">
                 <ProductFilters
                   categories={categories}
                   onFilterChange={handleFilterChange}
@@ -84,7 +84,7 @@ export default function MarketplacePage() {
             {/* Products Grid */}
             <div className="flex-1">
               <div className="mb-4 md:mb-6">
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400">
                   {isLoading ? 'Loading...' : `${products.length} products found`}
                 </p>
               </div>
@@ -92,13 +92,13 @@ export default function MarketplacePage() {
               {isLoading ? (
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                   {[...Array(6)].map((_, i) => (
-                    <div key={i} className="bg-white rounded-lg h-48 md:h-80 animate-pulse" />
+                    <div key={i} className="bg-white dark:bg-gray-800 rounded-lg h-48 md:h-80 animate-pulse" />
                   ))}
                 </div>
               ) : products.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-gray-500 text-lg">No products found</p>
-                  <p className="text-gray-400">Try adjusting your filters</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-lg">No products found</p>
+                  <p className="text-gray-400 dark:text-gray-500">Try adjusting your filters</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">

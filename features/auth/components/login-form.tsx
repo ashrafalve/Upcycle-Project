@@ -44,12 +44,12 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
       {success && (
-        <div className="p-3 text-sm text-green-600 bg-green-50 rounded-md">
+        <div className="p-3 text-sm text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 rounded-md">
           {success}
         </div>
       )}
       {error && (
-        <div className="p-3 text-sm text-red-600 bg-red-50 rounded-md">
+        <div className="p-3 text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 rounded-md">
           {error}
         </div>
       )}
@@ -72,10 +72,10 @@ export function LoginForm() {
       
       <div className="flex items-center justify-between">
         <label className="flex items-center">
-          <input type="checkbox" className="h-4 w-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500" />
-          <span className="ml-2 text-sm text-gray-600">Remember me</span>
+          <input type="checkbox" className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-emerald-600 focus:ring-emerald-500" />
+          <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
         </label>
-        <Link href="/forgot-password" className="text-sm text-emerald-600 hover:text-emerald-700">
+        <Link href="/forgot-password" className="text-sm text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">
           Forgot password?
         </Link>
       </div>

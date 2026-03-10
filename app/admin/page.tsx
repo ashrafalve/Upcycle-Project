@@ -20,32 +20,32 @@ export default function AdminDashboardPage() {
     <AdminLayout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-          <p className="text-gray-600">Platform overview and management</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin Dashboard</h1>
+          <p className="text-gray-600 dark:text-gray-400">Platform overview and management</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
-            <Card key={stat.label}>
+            <Card key={stat.label} className="bg-white dark:bg-gray-800">
               <CardContent className="p-6">
-                <p className="text-sm text-gray-500">{stat.label}</p>
-                <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
-                <p className="text-xs text-emerald-600 mt-2">{stat.change} from last month</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{stat.value}</p>
+                <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-2">{stat.change} from last month</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <Card>
+        <Card className="bg-white dark:bg-gray-800">
           <CardContent className="p-6">
-            <h2 className="text-lg font-semibold mb-4">Recent Activity</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h2>
             <div className="space-y-4">
               {recentActivity.map((activity, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-gray-900 mt-2" />
+                  <div className="w-2 h-2 rounded-full bg-gray-900 dark:bg-white mt-2" />
                   <div>
-                    <p className="text-sm text-gray-900">{activity.message}</p>
-                    <p className="text-xs text-gray-500">{activity.time}</p>
+                    <p className="text-sm text-gray-900 dark:text-white">{activity.message}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{activity.time}</p>
                   </div>
                 </div>
               ))}

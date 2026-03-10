@@ -60,9 +60,9 @@ export function ProductFilters({ categories, onFilterChange }: ProductFiltersPro
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
       <div>
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Search</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Search</label>
         <Input
           placeholder="Search products..."
           value={search}
@@ -72,7 +72,7 @@ export function ProductFilters({ categories, onFilterChange }: ProductFiltersPro
       </div>
 
       <div>
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Category</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Category</label>
         <Select value={category} onValueChange={(value) => setCategory(value || 'all')}>
           <SelectTrigger>
             <SelectValue placeholder="All Categories" />
@@ -89,7 +89,7 @@ export function ProductFilters({ categories, onFilterChange }: ProductFiltersPro
       </div>
 
       <div>
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Condition</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Condition</label>
         <Select value={condition} onValueChange={(value) => setCondition(value || 'all')}>
           <SelectTrigger>
             <SelectValue placeholder="All Conditions" />
@@ -106,7 +106,7 @@ export function ProductFilters({ categories, onFilterChange }: ProductFiltersPro
       </div>
 
       <div>
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Price Range</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Price Range</label>
         <Select value={priceRange} onValueChange={(value) => setPriceRange(value || 'all')}>
           <SelectTrigger>
             <SelectValue placeholder="Any Price" />

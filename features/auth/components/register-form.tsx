@@ -65,12 +65,12 @@ export function RegisterForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-5">
       {success && (
-        <div className="p-3 text-sm text-green-600 bg-green-50 rounded-md">
+        <div className="p-3 text-sm text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 rounded-md">
           {success}
         </div>
       )}
       {error && (
-        <div className="p-3 text-sm text-red-600 bg-red-50 rounded-md">
+        <div className="p-3 text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 rounded-md">
           {error}
         </div>
       )}
@@ -130,7 +130,7 @@ export function RegisterForm() {
         </Select>
       </FormField>
       
-      <p className="text-xs text-gray-500">
+      <p className="text-xs text-gray-500 dark:text-gray-400">
         {selectedAccountType === 'designer' 
           ? 'As a designer, you can accept upcycling projects and showcase your work.'
           : 'As a user, you can buy and sell items, and request upcycling designs.'}
@@ -140,11 +140,11 @@ export function RegisterForm() {
         Create Account
       </FormButton>
       
-      <p className="text-xs text-center text-gray-500">
+      <p className="text-xs text-center text-gray-500 dark:text-gray-400">
         By signing up, you agree to our{' '}
-        <Link href="/terms" className="text-emerald-600 hover:underline">Terms of Service</Link>
+        <Link href="/terms" className="text-emerald-600 dark:text-emerald-400 hover:underline">Terms of Service</Link>
         {' '}and{' '}
-        <Link href="/privacy" className="text-emerald-600 hover:underline">Privacy Policy</Link>
+        <Link href="/privacy" className="text-emerald-600 dark:text-emerald-400 hover:underline">Privacy Policy</Link>
       </p>
     </form>
   );
