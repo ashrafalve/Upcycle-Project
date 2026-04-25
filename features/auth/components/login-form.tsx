@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { loginSchema, LoginFormData, Input, FormField, FormButton } from '@/components/ui/form';
 import { authService } from '@/services/authService';
@@ -14,7 +14,10 @@ export function LoginForm() {
   const [success, setSuccess] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
   const setAuth = useAuthStore((state) => state.setAuth);
+  
+  const redirect = searchParams.get('redirect') || '/';
   
   const {
     register,
@@ -33,7 +36,7 @@ export function LoginForm() {
       const result = await authService.login(data);
       setAuth(result.user, result.tokens);
       setSuccess('Login successful! Redirecting...');
-      router.push('/');
+      router.push(redirect);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Invalid email or password');
     } finally {

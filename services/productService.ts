@@ -1,23 +1,22 @@
 import { Product, Category } from './api/types';
 
 export const mockCategories: Category[] = [
-  { id: '1', name: 'Furniture', slug: 'furniture', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop' },
-  { id: '2', name: 'Clothing', slug: 'clothing', image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=200&h=200&fit=crop' },
-  { id: '3', name: 'Electronics', slug: 'electronics', image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=200&h=200&fit=crop' },
-  { id: '4', name: 'Home Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=200&h=200&fit=crop' },
-  { id: '5', name: 'Art', slug: 'art', image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&h=200&fit=crop' },
-  { id: '6', name: 'Jewelry', slug: 'jewelry', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop' },
+  { id: '1', name: 'Furniture', slug: 'furniture', image: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=400&h=400&fit=crop' },
+  { id: '2', name: 'Clothing', slug: 'clothing', image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=400&fit=crop' },
+  { id: '3', name: 'Electronics', slug: 'electronics', image: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=400&h=400&fit=crop' },
+  { id: '4', name: 'Home Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1534073828943-f801091bb18c?w=400&h=400&fit=crop' },
+  { id: '5', name: 'Art', slug: 'art', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=400&h=400&fit=crop' },
+  { id: '6', name: 'Jewelry', slug: 'jewelry', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop' },
 ];
 
 export const mockProducts: Product[] = [
   {
     id: '1',
-    title: 'Vintage Oak Dresser',
-    description: 'Beautiful vintage oak dresser with original hardware. Minor wear on surface adds character. Six drawers with smooth sliding action. Perfect for bedroom or entryway storage.',
-    price: 350,
+    title: 'Industrial Copper Pipe Lamp',
+    description: 'A unique desk lamp handcrafted from industrial copper pipes and a vintage Edison bulb. Each piece is hand-polished and features a rustic yet modern aesthetic.',
+    price: 85,
     images: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop',
+      '/images/products/pipe-lamp.png',
     ],
     category: 'furniture',
     condition: 'good',
@@ -37,11 +36,11 @@ export const mockProducts: Product[] = [
   },
   {
     id: '2',
-    title: 'Upcycled Leather Messenger Bag',
-    description: 'Handcrafted messenger bag made from reclaimed leather. Features antique brass hardware, adjustable strap, and multiple compartments. Each bag is unique.',
-    price: 120,
+    title: 'Vintage Suitcase Planter',
+    description: 'A reclaimed vintage leather suitcase transformed into a stunning indoor garden. Includes a custom waterproof liner and a curated selection of easy-care succulents.',
+    price: 145,
     images: [
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop',
+      '/images/products/suitcase-planter.png',
     ],
     category: 'clothing',
     condition: 'like_new',
@@ -61,11 +60,11 @@ export const mockProducts: Product[] = [
   },
   {
     id: '3',
-    title: 'Restored Mid-Century Chair',
-    description: 'Classic mid-century modern chair professionally restored. New foam cushioning with premium fabric. Walnut legs refinished. Perfect accent piece.',
-    price: 275,
+    title: 'Bicycle Wheel Wall Clock',
+    description: 'Modern industrial wall clock created from a salvaged vintage bicycle wheel. The spokes and hub are preserved to maintain its authentic mechanical look.',
+    price: 75,
     images: [
-      'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1591129841117-3adfd313e34f?w=800&q=80',
     ],
     category: 'furniture',
     condition: 'like_new',
@@ -85,11 +84,11 @@ export const mockProducts: Product[] = [
   },
   {
     id: '4',
-    title: 'Reclaimed Wood Coffee Table',
-    description: 'Rustic coffee table made from reclaimed barn wood. Natural patina preserved. Steel hairpin legs for industrial look. 48" x 24" top.',
-    price: 425,
+    title: 'Pallet Wood Lounge Chair',
+    description: 'Ergonomic lounge chair built entirely from heat-treated shipping pallets. Sanded to a smooth finish and treated with weather-resistant natural oils.',
+    price: 210,
     images: [
-      'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80',
     ],
     category: 'furniture',
     condition: 'good',

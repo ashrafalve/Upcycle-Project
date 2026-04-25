@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Navbar, Footer } from '@/components/layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -60,9 +61,11 @@ export default function DesignersPage() {
                     <span className="font-medium">{designer.rating}</span>
                     <span className="text-gray-400 text-sm">({designer.projects} projects)</span>
                   </div>
-                  <Button className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700">
-                    View Profile
-                  </Button>
+                  <Link href={`/designers/${designer.id}`} className="block mt-4">
+                    <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                      View Profile
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

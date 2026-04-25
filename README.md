@@ -34,6 +34,14 @@ npm install
 npm run dev
 ```
 
+## Test Login Credentials
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **User (Buyer)** | `user@example.com` | `password123` |
+| **Designer** | `designer@example.com` | `password123` |
+| **Admin** | `admin@example.com` | `password123` |
+
 Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Project Structure

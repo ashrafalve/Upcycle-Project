@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { Navbar, Footer } from '@/components/layout';
 
 const designers = [
-  { name: 'Sarah Johnson', specialty: 'Furniture Restoration', location: 'Brooklyn, NY' },
-  { name: 'Mike Chen', specialty: 'Leather Goods', location: 'Austin, TX' },
-  { name: 'Emma Wilson', specialty: 'Textile Arts', location: 'Portland, OR' },
-  { name: 'Alex Rivera', specialty: 'Woodworking', location: 'Denver, CO' },
-  { name: 'Jessica Brown', specialty: 'Art & Decor', location: 'Seattle, WA' },
-  { name: 'David Kim', specialty: 'Metal Work', location: 'Chicago, IL' },
+  { id: 2, name: 'Sarah Johnson', specialty: 'Furniture Restoration', location: 'Brooklyn, NY' },
+  { id: 1, name: 'Mike Chen', specialty: 'Leather Goods', location: 'Austin, TX' },
+  { id: 3, name: 'Emma Wilson', specialty: 'Textile Arts', location: 'Portland, OR' },
+  { id: 4, name: 'Alex Rivera', specialty: 'Woodworking', location: 'Denver, CO' },
+  { id: 7, name: 'Jessica Brown', specialty: 'Art & Decor', location: 'Seattle, WA' },
+  { id: 8, name: 'David Kim', specialty: 'Metal Work', location: 'Chicago, IL' },
 ];
 
 export default function DesignerShowcasePage() {
@@ -31,7 +31,7 @@ export default function DesignerShowcasePage() {
                 <h3 className="text-lg font-semibold text-gray-900">{designer.name}</h3>
                 <p className="text-emerald-600">{designer.specialty}</p>
                 <p className="text-gray-500 text-sm">{designer.location}</p>
-                <Link href="/designer-dashboard/profile" className="inline-block mt-4 text-emerald-600 hover:text-emerald-700">
+                <Link href={`/designers/${designer.id}`} className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium">
                   View Profile →
                 </Link>
               </div>
