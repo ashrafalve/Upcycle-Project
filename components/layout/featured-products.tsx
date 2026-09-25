@@ -138,7 +138,7 @@ export function FeaturedProducts() {
           transition={{ delay: 0.4 }}
         >
           <Link href="/marketplace">
-            <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 px-10 py-6 text-lg shadow-xl shadow-emerald-600/20 transform hover:scale-105 transition-all">
+            <Button size="lg" className="rounded-full bg-emerald-600 hover:bg-emerald-700 px-10 py-6 text-lg transform hover:scale-105 transition-all">
               Discover More sustainable goods
             </Button>
           </Link>

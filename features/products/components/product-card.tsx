@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Product } from '@/services/api/types';
@@ -34,15 +34,15 @@ export function ProductCard({ product }: ProductCardProps) {
   const condition = conditionConfig[product.condition] || { label: product.condition, color: 'bg-gray-100 text-gray-600' };
 
   return (
-    <Card className="group relative overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-500 rounded-2xl flex flex-col h-full">
+    <Card className="group relative overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-500 rounded-2xl flex flex-col h-full py-0 gap-0">
       {/* Image Section */}
-      <Link href={`/product/${product.id}`} className="block relative aspect-[4/5] overflow-hidden">
+      <Link href={`/product/${product.id}`} className="block relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800">
         <Image
           src={product.images[0]}
           alt={product.title}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+          className="object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-in-out"
         />
         
         {/* Floating Badges */}
@@ -53,13 +53,13 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Wishlist Button (Aesthetic only for now) */}
-        <button className="absolute top-3 right-3 z-10 p-2 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-full text-gray-600 dark:text-gray-300 hover:text-red-500 hover:bg-white transition-all duration-300 shadow-sm opacity-0 group-hover:opacity-100 transform translate-y-[-10px] group-hover:translate-y-0">
+        <button className="absolute top-3 right-3 z-10 p-2 bg-white/80 dark:bg-black/40 rounded-full text-gray-600 dark:text-gray-300 hover:text-red-500 hover:bg-white transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-[-10px] group-hover:translate-y-0">
           <Heart className="w-4 h-4" />
         </button>
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="bg-white/90 dark:bg-black/60 backdrop-blur-md px-4 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg border border-white/20">
+          <div className="bg-white/90 dark:bg-black/60 px-4 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 border border-white/20">
             <span className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
               <Eye className="w-4 h-4" /> Quick View
             </span>
@@ -99,7 +99,7 @@ export function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
             <Link href={`/product/${product.id}`} className="w-full sm:w-auto">
-              <Button size="sm" className="w-full sm:w-auto rounded-lg md:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/20 px-3 md:px-5 h-8 md:h-9 text-[10px] md:text-sm transition-all hover:scale-105 active:scale-95">
+              <Button size="sm" className="w-full sm:w-auto rounded-lg md:rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-3 md:px-5 h-8 md:h-9 text-[10px] md:text-sm transition-all hover:scale-105 active:scale-95">
                 View
               </Button>
             </Link>
